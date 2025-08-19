@@ -1,23 +1,17 @@
 
 # 📍 Retail.AI Booth -- at the store frontline
 
-## CS Zone: First Point of Contact  
-At the **Customer Service entry point**, this booth becomes the launchpad for the in-store customer journey—contributing to engagement, upsell opportunities, and long-term satisfaction.
+The Booth contains a **Prompt Wizard** and a **RouteMap Generator**. Together with the store AI (e.g., MyLow), they deliver the following improvements:
 
----
+- **Journey Planning**  
+  Shoppers get optimized in-store routes for complex lists, instead of only general directions.
 
-## 🧩 Challenges at the Customer Service Frontline
+- **Upsell Engagement**  
+  Prompt Wizard guides CS staff to apply managers’ upsell strategies early—creating leads, raising revenue, and improving outcomes.
 
-- **Lack of Journey Planning Tools**  
-  Customers with complex shopping lists often seek optimized in-store routes. Currently, CS staff can only give general directions, not a tailored route.
+- **Accurate Q&A**  
+  With guided prompts, CS staff provide reliable product answers, avoiding lost sales and frustration.
 
-- **Upsell Opportunities Missed**  
-  While managers possess deep upselling experience, CS staff may lack tools to leverage that knowledge. With smart prompts, early-trip upsell engagement can generate qualified leads, increase revenue, and improve customer outcomes.
-
-- **Q&A Bottlenecks**  
-  With lean or flex staffing, CS staff are often pulled into product Q&A roles. Incorrect or incomplete answers risk revenue loss and customer dissatisfaction.
-
----
 
 ![retail.ai booth](schematic_line_drawing.png)
 
@@ -43,31 +37,45 @@ Hi there! Want to see how our AI can map out the best solution for your project�
 ## 🏪 Store Customization
 
 Settings are configured by store leadership to reflect local context:
-
-- Weekly promotional focus  
-- Local building code rules  
-- Weather-based suggestions (e.g., wildfire prep)  
-- Region-specific upsell strategies  
-
-#### Example (Store_Settings.json):
-```json
+ 
+  1. Store weekly push  
+  2. Local building codes  
+  3. Local weather profile (e.g., wildfire warnings).  
+  4. Up-engagement strategies
+ 
+example **Store_Setting.json**
+```
 {
-  "weekly_promos": [
-    {"sku": "100123456", "name": "4x4x8 Pressure-Treated Wood"},
-    {"sku": "100456789", "name": "RYOBI 18V Cordless Drill Kit"}
+  "store_id": "8949",
+  "zip": "92064",
+  "1. "store_weekly_push": [
+    {"sku": "100123456", "name": "Pressure-Treated Wood Post 4x4x8"},
+    {"sku": "100456789", "name": "RYOBI 18V ONE+ Cordless Drill/Driver Kit"},
+    {"sku": "100567890", "name": "Westinghouse 9500DF Dual Fuel Portable Generator"},
+    {"sku": "100678901", "name": "Toshiba 12000 BTU Portable Air Conditioner"}
   ],
-  "weather_profile": {
-    "condition": "hot_dry",
-    "tips": ["UV-resistant stain", "corrosion-proof fasteners"]
+  "2. local_weather": {
+    "condition": "hot_dry, wildfire hazard",
+    "recommendations": [
+      "Use outdoor-rated adhesives and corrosion-resistant fasteners",
+      "Apply UV-resistant exterior stain to prolong material life",
+      "Maintain defensible space by clearing vegetation near fence line",
+      "Select ignition-resistant or treated lumber where feasible",
+      "Avoid storing flammable materials adjacent to structures"
+    ]
   },
-  "building_codes": {
-    "fence_rules": "No permit for fences ≤ 6 ft unless in utility easement"
+  "3. building_codes": {
+    "fence_rules": "Masonry or wood fences 6 ft or less do not require a building permit; however, clear 2-ft access to water meters and no encroachment in utility easements. (Per Poway standard plan & PMC 13.11.130.A) :contentReference[oaicite:1]{index=1}",
+    "wui_requirements": "Fences in high fire risk zones must comply with Wildland-Urban Interface Code—PMC 15.24.100. :contentReference[oaicite:2]{index=2}",
+    "zoning": "Fence heights regulated under PMC 17.08; front yard height rules per Title 17.08.240. :contentReference[oaicite:3]{index=3}"
   },
-  "upsell_prompts": [
-    "Need help with solar lighting ideas?",
-    "Looking for pro installers for your backyard fence?"
-  ]
+  "4. up_engagements": [
+  "Need a list of trusted landscapers for your backyard?",
+  "Thinking about adding solar lighting or panels out back?",
+  "Want ideas to pair your fence with landscaping or solar upgrades?"
+]
 }
+
 ```
 
 ---
@@ -133,6 +141,5 @@ career focus: Customer Engagement SaaS | UO Strategy
 
 ## 🎯 Past UO Works
 
-🔗 DFC Website – Patient Recruitment
-
-🔗 Lunch Bag CME – Physician Engagement
+🔗 [DFC Website – Patient Recruitment](past_UO_cases.md#dfc-website--patient-recruitment)  
+🔗 [Lunch Bag CME – Physician Engagement](past_UO_cases.md#lunch-bag-cme--physician-engagement)
